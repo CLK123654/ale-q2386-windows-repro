@@ -1,0 +1,13 @@
+支持的操作系统：Windows11。
+
+主软件：PostgreSQL Client，连接Windows11本机PostgreSQL17服务，数据库地址仅使用本机回环接口。
+
+辅助工具：PowerShell7、Python3.12、UTF-8文本编辑器及CSV、JSON查看器。辅助工具用于文件整理和结果导出，账本对象、事务约束与入账行为必须由PostgreSQL实际执行。
+
+运行权限：允许在独立数据库中创建schema、表、函数、触发器和索引。输入数据包保持只读，结果只写入任务工作目录。
+
+网络条件：软件安装阶段可以联网，任务执行阶段不访问外部服务。
+
+软件许可：PostgreSQL按PostgreSQL License使用，本题不分发PostgreSQL二进制文件。
+
+主要风险：延迟触发器只覆盖一侧会漏过无行分录，请求载荷没有按line_no规范化会误判重试，冲正关系缺少唯一限制会重复撤销。
